@@ -1,0 +1,57 @@
+﻿@page
+@model LikeSurvey.Pages.CalculationsModel
+@{
+    <h2 style="text-align:center;">Survey Results</h2>
+
+    if (Model.TotalSurveys > 0)
+    {
+        <div class="d-flex justify-content-between">
+            <div class="left-side" style="margin-top:70px;">
+
+                <a>Total number of surveys:</a><br />
+                <a>Average Age:</a><br />
+                <a>Oldest Person who participated in survey:</a><br />
+                <a>Youngest Person who participated in survey:</a><br />
+                <br />
+
+                <a>Percentage of People who like Pizza:</a><br />
+                <a>Percentage of People who like Pasta:</a><br />
+                <a>Percentage of People who like Pap and Wors:</a><br />
+                <br />
+
+                <a>People who like to watch movies:</a><br />
+                <a>People who like to listen to radio:</a><br />
+                <a>People who like to eat out:</a><br />
+                <a>People who like to watch TV:</a><br />
+                <br />
+            </div>
+
+            <div class="right-side" style="margin-top:70px; margin-right:300px;">
+                <a>@Model.TotalSurveys Surveys</a><br />
+                <a>@Model.AverageAge years</a><br />
+                <a>@Model.MaxAge years</a><br />
+                <a>@Model.MinAge years</a><br />
+                <br />
+
+                <a>@Model.PercentagePizza.ToString("F1")%</a><br />
+                <a>@Model.PercentagePasta.ToString("F1")%</a><br />
+                <a>@Model.PercentagePap.ToString("F1")%</a><br />
+                <br />
+
+                <a>@Model.AvgWatchMovie</a><br />
+                <a>@Model.AvgListenRadio</a><br />
+                <a>@Model.AvgEatOut</a><br />
+                <a>@Model.AvgWatchTV</a><br />
+                <br />
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-info alert-dismissible fade show">
+            <strong>No Surveys Available</strong> Fill Out the Survey to be able to View the Results.
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+}
+

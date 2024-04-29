@@ -1,0 +1,241 @@
+﻿@page
+@model LikeSurvey.Pages.AddSurveyModel
+
+<form method="post">
+    <div class="text-center">
+    <div class="first-section" style="margin-top: 100px;">
+        <div class="d-flex justify-content-between">
+            <div class="left-hand">
+                <p>Personal Details: </p>
+            </div>
+
+            <div class="right-hand" style="margin-right: 400px;">
+                <input type="hidden" id="id" name="id" value="@Model.surv.Id" />
+
+                    <p style=" text-align: left; margin-bottom: 2px; margin-top: 1px;">Full Names</p>
+                <input type="text" name="fullnames" value="@Model.surv.FullNames">
+
+                    <p style=" text-align: left; margin-bottom: 2px; margin-top: 20px;">Email</p>
+                <input type="text" name="email" value="@Model.surv.Email">
+
+                    <p style=" text-align: left; margin-bottom: 2px; margin-top: 20px;">Date Of Birth</p>
+                <input type="date" id="dateInput" name="dob" style="width: 200px" />
+                <p id="dobDisplay" style="color: white; font-size:2px;" value="@Model.surv.DateOfBirth">@Model.surv.DateOfBirth</p>
+
+                    <p style=" text-align: left; margin-bottom: 2px; margin-top: 20px;">Contact Number</p>
+                <input type="text" name="contactnumber" value="@Model.surv.ContactNumber">
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="second-section">
+        <div class="d-flex justify-content-between">
+            <div class="question" style="margin-top: 50px;">
+                <p>What is your favorite food?</p>
+            </div>
+
+            <div class="radioAnswers" style="padding: 40px; margin-right: 300px; margin-top:10px;">
+                <div class="d-flex justify-content-between">
+
+                    <input type="radio" id="pizza" name="favoriteFood" value="Pizza" style="margin-right: 10px;">
+                    <label for="pizza" style="margin-right:30px">Pizza</label><br>
+
+                    <input type="radio" id="pasta" name="favoriteFood" value="Pasta" style="margin-right: 10px;">
+                    <label for="pasta" style="margin-right:30px">Pasta</label><br>
+
+                    <input type="radio" id="papAndWors" name="favoriteFood" value="PapandWors" style="margin-right: 10px;">
+                    <label for="papandwors" style="margin-right:30px">Pap and Wors</label><br>
+
+                    <input type="radio" id="other" name="favoriteFood" value="Other" style="margin-right: 10px;">
+                    <label for="other" style="margin-right:30px">Other</label><br>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="third-section" style="margin-top:70px;">
+        <p style="font-weight:bold;">Please rate your level of agreement on scale from 1 to 5, with 1 being "strongly agree" and 5 being "strongly disagree."</p>
+    </div>
+
+
+    <div class="forth-section">
+        <table style="border-collapse: collapse; width: 100%;">
+            <thead>
+                <tr>
+                    <th style="border: 1px solid black; padding: 8px;"></th>
+                    <th style="border: 1px solid black; padding: 8px;">Strongly Agree</th>
+                    <th style="border: 1px solid black; padding: 8px;">Agree</th>
+                    <th style="border: 1px solid black; padding: 8px;">Neutral</th>
+                    <th style="border: 1px solid black; padding: 8px;">Disagree</th>
+                    <th style="border: 1px solid black; padding: 8px;">Strongly Disagree</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="border: 1px solid black; padding: 8px; text-align: left;">I like to watch Movies</td>
+                    <td style="border: 1px solid black; padding: 8px;"><input type="radio" name="movies" id="1" value="1"></td>
+                    <td style="border: 1px solid black; padding: 8px;"><input type="radio" name="movies" id="2" value="2"></td>
+                    <td style="border: 1px solid black; padding: 8px;"><input type="radio" name="movies" id="3" value="3"></td>
+                    <td style="border: 1px solid black; padding: 8px;"><input type="radio" name="movies" id="4" value="4"></td>
+                    <td style="border: 1px solid black; padding: 8px;"><input type="radio" name="movies" id="5" value="5"></td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black; padding: 8px; text-align: left;">I like to listen to Radio</td>
+
+                    <td style="border: 1px solid black; padding: 8px;"><input type="radio" name="radio" id="1" value="1"></td>
+                    <td style="border: 1px solid black; padding: 8px;"><input type="radio" name="radio" id="2" value="2"></td>
+                    <td style="border: 1px solid black; padding: 8px;"><input type="radio" name="radio" id="3" value="3"></td>
+                    <td style="border: 1px solid black; padding: 8px;"><input type="radio" name="radio" id="4" value="4"></td>
+                    <td style="border: 1px solid black; padding: 8px;"><input type="radio" name="radio" id="5" value="5"></td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black; padding: 8px; text-align: left;">I like to eat out</td>
+                    <td style="border: 1px solid black; padding: 8px;"><input type="radio" name="eat" id="1" value="1"></td>
+                    <td style="border: 1px solid black; padding: 8px;"><input type="radio" name="eat" id="2" value="2"></td>
+                    <td style="border: 1px solid black; padding: 8px;"><input type="radio" name="eat" id="3" value="3"></td>
+                    <td style="border: 1px solid black; padding: 8px;"><input type="radio" name="eat" id="4" value="4"></td>
+                    <td style="border: 1px solid black; padding: 8px;"><input type="radio" name="eat" id="5" value="5"></td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black; padding: 8px; text-align: left;">I like to watch TV</td>
+                    <td style="border: 1px solid black; padding: 8px;"><input type="radio" name="tv" id="1" value="1"></td>
+                    <td style="border: 1px solid black; padding: 8px;"><input type="radio" name="tv" id="2" value="2"></td>
+                    <td style="border: 1px solid black; padding: 8px;"><input type="radio" name="tv" id="3" value="3"></td>
+                    <td style="border: 1px solid black; padding: 8px;"><input type="radio" name="tv" id="4" value="4"></td>
+                    <td style="border: 1px solid black; padding: 8px;"><input type="radio" name="tv" id="5" value="5"></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    </div>
+
+    <input type="hidden" name="ztv" id="ztv" value="@Model.surv.LikeWatchOut">
+    <input type="hidden" name="zmovies" id="zmovies" value="@Model.surv.LikeMovies">
+    <input type="hidden" name="zradio" id="zradio" value="@Model.surv.LikeRadio">
+    <input type="hidden" name="zeat" id="zeat" value="@Model.surv.LikeEatOut">
+    <input type="hidden" name="zfavfood" id="zfavfood" value="@Model.surv.FavFood">
+
+    <div style="text-align: center; margin-top: 60px;">
+        <button type="submit" style="background-color: #007bff;
+          margin-top: 20px;
+          margin-left: 10px;
+          color: white;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          font-size: 18px;
+          cursor: pointer;
+          transition: background-color 0.3s;">
+            Submit
+        </button>
+        
+    </div>
+</form>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const tvradioButtons = document.querySelectorAll('input[type="radio"][name="tv"]');
+        const eatradioButtons = document.querySelectorAll('input[type="radio"][name="eat"]');
+        const radioradioButtons = document.querySelectorAll('input[type="radio"][name="radio"]');
+        const moviesradioButtons = document.querySelectorAll('input[type="radio"][name="movies"]');
+        const favfoodradioButtons = document.querySelectorAll('input[type="radio"][name="favoriteFood"]');
+
+        const ztvInput = document.getElementById('ztv');
+        const zeatInput = document.getElementById('zeat');
+        const zmoviesInput = document.getElementById('zmovies');
+        const zradioInput = document.getElementById('zradio');
+        const zfavfoodInput = document.getElementById('zfavfood');
+
+        const form = document.querySelector('form'); // Select the form
+
+        // Add event listener for form submission
+        form.addEventListener('submit', (event) => {
+            const fullName = form.querySelector('input[name="fullnames"]');
+            const email = form.querySelector('input[name="email"]');
+            const contactNumber = form.querySelector('input[name="contactnumber"]');
+            const dob = form.querySelector('input[name="dob"]');
+            const favFood = form.querySelector('input[name="favoriteFood"]:checked');
+            const zRadio = form.querySelector('input[name="radio"]:checked');
+            const zEat = form.querySelector('input[name="eat"]:checked');
+            const zTv = form.querySelector('input[name="tv"]:checked');
+            const zMovies = form.querySelector('input[name="movies"]:checked');
+
+            // Calculate age difference
+            const dobDate = new Date(dob.value);
+            const currentDate = new Date();
+            const ageDifference = currentDate.getFullYear() - dobDate.getFullYear();
+
+            // Check conditions for validation
+            if (!fullName.value.trim() ||
+                !email.value.trim() ||
+                !contactNumber.value.trim() ||
+                !favFood ||
+                dob.value === '1900-01-01' ||
+                !zRadio ||
+                !zEat ||
+                !zTv ||
+                !zMovies) {
+                event.preventDefault(); // Prevent form submission
+                alert('Please complete every field.'); // Display alert message
+            } else if (ageDifference <= 5 || ageDifference >= 120) {
+                event.preventDefault(); // Prevent form submission
+                alert('Age must be between 6 and 119 years.'); // Display age range alert message
+            }
+        });
+
+        // Favorite Food
+        favfoodradioButtons.forEach(radio => {
+            radio.addEventListener('change', () => {
+                // Update the value of zfavfood input when a radio button is selected
+                zfavfoodInput.value = radio.value;
+            });
+        });
+
+        // I like to watch TV
+        tvradioButtons.forEach(radio => {
+            radio.addEventListener('change', () => {
+                // Update the value of ztv input when a radio button is selected
+                ztvInput.value = radio.value;
+            });
+        });
+
+        // I like to eat out
+        eatradioButtons.forEach(radio => {
+            radio.addEventListener('change', () => {
+                // Update the value of zeat input when a radio button is selected
+                zeatInput.value = radio.value;
+            });
+        });
+
+        // I like to listen to Radio
+        radioradioButtons.forEach(radio => {
+            radio.addEventListener('change', () => {
+                // Update the value of zradio input when a radio button is selected
+                zradioInput.value = radio.value;
+            });
+        });
+
+        // I like to watch Movies
+        moviesradioButtons.forEach(radio => {
+            radio.addEventListener('change', () => {
+                // Update the value of zmovies input when a radio button is selected
+                zmoviesInput.value = radio.value;
+            });
+        });
+
+        // Initialize the datepicker
+        const dateInput = document.getElementById('dateInput');
+        dateInput.addEventListener('change', (event) => {
+            const selectedDate = event.target.value;
+            document.getElementById('dobDisplay').innerHTML = selectedDate;
+        });
+    });
+</script>
+
